@@ -1,2 +1,0 @@
-# DestinoCerto-MVC
-[...]
