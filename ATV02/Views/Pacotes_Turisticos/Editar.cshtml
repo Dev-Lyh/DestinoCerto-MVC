@@ -1,0 +1,77 @@
+@model Pacotes_Turisticos
+
+@{
+    ViewData["Title"] = "Edição de Pacotes";
+    Layout = "_LayoutDC";
+}
+
+<nav>
+    <div class="body_content">
+        <div class="g-f-cp">
+            <form method="POST" asp-action="Editar" class="form-cp">
+                <div class="grid-f">
+                    <div class="i-lo">
+                        <input type="hidden" asp-for="Id">
+                        <div>
+                            <label asp-for="Nome">Nome</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Nome" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Origem">Origem</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Origem" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Destino">Destino</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Destino" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Atrativos">Atrativos</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Atrativos" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Saida">Saida</label>
+                        </div>
+                        <div>
+                            <input type="date" asp-for="Saida" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Retorno">Retorno</label>
+                        </div>
+                        <div>                                
+                            <input type="date" asp-for="Retorno" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Usuario">Usuario</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Usuario">
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <input type="submit" value="Cadastrar Pacote" class="fk-inp">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>

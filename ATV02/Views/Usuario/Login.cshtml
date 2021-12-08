@@ -1,0 +1,43 @@
+@model Usuario
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutDC";
+}
+<nav>
+    <div class="body_content">
+        <p class="viewBags">
+            <span>
+                @ViewBag.Mensagem
+            </span>
+            <span>
+                @ViewBag.MensagemFalha
+            </span>
+        </p>
+        <div class="g-f">
+            <form method="POST" asp-action="Login">
+                <div class="grid-f">
+                    <h2>Login</h2>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Login">Login</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Login" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Senha">Senha</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Senha" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <input type="submit" value="Entrar" class="fk-inp">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>

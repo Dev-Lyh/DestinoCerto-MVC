@@ -1,0 +1,40 @@
+@model IEnumerable<Pacotes_Turisticos>
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Lista";
+    Layout = "_LayoutDC";
+}
+
+<nav>
+    <div class="body_content pd-bh">
+        <div class="grid-page">
+                <div class="gr-p-u">
+                    @foreach(Pacotes_Turisticos p in Model)
+                    {
+                        <div class="p-u">
+                            <div class="img-bg img-bg2"></div>
+                            <h3><i class="fas fa-suitcase"></i> @p.Nome</h3>
+                            <p><i class="fas fa-map-marker-alt i-yellow"></i> @p.Origem</p>
+                            <p><i class="fas fa-plane i-yellow"></i> @p.Destino</p>
+                            <p>
+                                <span>
+                                    <i class="fas fa-angle-double-right i-yellow"></i>
+                                    @p.Atrativos
+                                </span>
+                            </p>
+                            <p><i class="fas fa-redo-alt i-yellow"></i> @p.Saida.ToShortDateString()</p>
+                            <p><i class="fas fa-undo-alt i-yellow"></i> @p.Retorno.ToShortDateString()</p>
+                            <p><i class="fas fa-address-card i-yellow"></i> @p.Usuario</p>
+                            @if(Context.Session.GetInt32("IdUser") != null)
+                            {
+                                <div class="oper">
+                                    <a href="/Pacotes_Turisticos/Excluir?Id=@p.Id" class="rm" onclick="return confirm('Deseja mesmo excluir?');">Remover</a>
+                                    <a href="/Pacotes_Turisticos/Editar?Id=@p.Id" class="ed">Alterar</a>
+                                </div>
+                            }
+                        </div>
+                    }
+            </div>
+        </div>
+    </div>
+</nav>

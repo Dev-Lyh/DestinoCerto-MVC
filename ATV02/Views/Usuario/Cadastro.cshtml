@@ -1,0 +1,53 @@
+@model Usuario
+
+@{
+    ViewData["Title"] = "Cadastro";
+    Layout = "_LayoutDC";
+}
+
+<nav>
+    <div class="body_content">
+        <div class="g-f">
+            <form method="POST" asp-action="Cadastro">
+                <div class="grid-f">
+                    <h2>Cadastro de usuário</h2>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Nome">Nome</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Nome" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Login">Login</label>
+                        </div>
+                        <div>
+                            <input type="text" asp-for="Login" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="Senha">Senha</label>
+                        </div>
+                        <div>
+                            <input type="text"asp-for="Senha" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <div>
+                            <label asp-for="DataNascimento">Data de Nascimento</label>
+                        </div>
+                        <div>
+                            <input type="date" asp-for="DataNascimento" required>
+                        </div>
+                    </div>
+                    <div class="i-lo">
+                        <input type="submit" value="Cadastrar" class="fk-inp">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
